@@ -1,7 +1,14 @@
 {
+  "name": "sails-item-acquierers",
+  "version": "1.0.0",
+  "description": "Game about acquiring item acquierers who acquier items",
+  "scripts": {
+    "start": "node server.js"
+  },
   "dependencies": {
     "dotenv": "^16.4.4",
     "express": "^4.18.2",
-    "mongodb": "^6.3.0"
+    "express-validator": "^7.0.1",
+    "mongoose": "^8.1.3"
   }
 }
