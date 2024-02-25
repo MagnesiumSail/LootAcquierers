@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const AcquirersController = require('../controllers/AcquirersController');
+const AcquirersController = require('../controllers/AcquirerController');
 
 // GET all acquirers
 router.get('/', AcquirersController.getAllAcquirers);

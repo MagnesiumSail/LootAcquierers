@@ -1,5 +1,5 @@
-const Item = require('../models/Item');
-const Acquirer = require('../models/Acquirer');
+const Item = require('../models/ItemModel');
+const Acquirer = require('../models/AcquirerModel');
 
 // GET all acquirers
 const getAllAcquirers = async (req, res) => {
