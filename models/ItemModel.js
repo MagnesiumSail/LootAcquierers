@@ -10,6 +10,17 @@ const ItemSchema = new Schema({
     description: {
         type: String
     },
+    types: {
+        type: String,
+        required: true
+    },
+    origins: {
+        type: String,
+        required: true
+    },
+    rarity: {
+        type: String,
+    }
 }, 
 {
     versionKey: false,

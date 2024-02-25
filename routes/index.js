@@ -8,7 +8,8 @@ router.get('/', (req, res) => {
 
 // Item Route
 router.use('/items', require('./items'));
-//more routes here
+// Acquirer Route
+router.use('/acquirers', require('./acquirers'));
 
 // error handling
 router.use((req, res, next) => {
