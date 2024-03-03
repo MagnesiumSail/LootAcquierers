@@ -10,6 +10,8 @@ router.get('/', (req, res) => {
 router.use('/items', require('./items'));
 // Acquirer Route
 router.use('/acquirers', require('./acquirers'));
+// Account Route
+router.use('/accounts', require('./accounts'));
 
 // error handling
 router.use((req, res, next) => {
