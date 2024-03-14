@@ -1,6 +1,11 @@
 const Item = require('../models/ItemModel');
 const Acquirer = require('../models/AcquirerModel');
 
+
+
+
+
+/*
 // GET all acquirers
 const getAllAcquirers = async (req, res) => {
   try {
@@ -76,3 +81,4 @@ module.exports = {
   updateAcquirer,
   deleteAcquirer
 };
+*/
