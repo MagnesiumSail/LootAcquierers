@@ -10,8 +10,19 @@ To get started with the game, follow the steps below:
 2. Start the server: `npm start`
 
 ## TO-DO
-
 - Everything.
+#### PRIORITY
+
+- Add routes to controllers pointing at functions in the models that server puzzles
+- Items and acquireres need more standardized groupings
+- Acquierers need to be able to accept calls to use them
+#### GET TO EVENTUALLY
+- Items need to be able to be added to inventory function
+- Need to find a way to distribute acquierers (time based?)
+- need to handle inventory logic
+- Need functions for degredation of items and acquierers
+#### IDEAS
+- Maybe add a currency and shop mechanic
 
 ## Contributions
 
