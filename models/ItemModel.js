@@ -46,3 +46,19 @@ const itemSchema = new Schema({
   });
 
 module.exports = mongoose.model('ItemModel', ItemSchema);
+
+// Get single Item
+//THIS NEEDS TESTING **UNTESTED**
+const getItem = async (req, res) => {
+  try {
+    const returnedItem = await ItemModel.findById(req.params.id);
+    if (!returnedItem) {
+      return res.status(404).json({ message: 'Item not found' });
+    }
+    res.json(returnedItem);
+  }
+  catch (err) {
+    console.error(err);
+    res.status(500).json({ message: 'Server Error' });
+  }
+}

@@ -12,7 +12,6 @@ To get started with the game, follow the steps below:
 ## TO-DO
 - Everything.
 #### PRIORITY
-
 - Add routes to controllers pointing at functions in the models that server puzzles
 - Items and acquireres need more standardized groupings
 - Acquierers need to be able to accept calls to use them
