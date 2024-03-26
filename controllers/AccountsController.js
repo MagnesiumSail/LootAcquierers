@@ -1,6 +1,4 @@
-const crypto = require("crypto");
-const axios = require("axios");
-const bcrypt = require('bcrypt');
+const { v4: uuidv4 } = require('uuid');
 
 //request new key
 const requestNewKey = async (req, res) => {

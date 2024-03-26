@@ -2,29 +2,47 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const ItemSchema = new Schema({
+const itemSchema = new Schema({
     name: {
-        type: String,
-        required: true
+      type: String,
+      required: true,
+      trim: true,
+      lowercase: true
     },
     description: {
-        type: String
+      type: String,
+      trim: true,
+      default: '',
     },
     types: {
-        type: String,
-        required: true
+      type: String,
+      required: true,
+      trim: true,
+      lowercase: true
     },
     origins: {
-        type: String,
-        required: true
+      type: String,
+      required: true,
+      trim: true,
+      lowercase: true
     },
     rarity: {
+      type: String,
+      required: true, //Item Rarity Required
+      trim: true,
+      lowercase: true,
+      enum: ['common', 'uncommon', 'rare', 'legendary', 'exotic'], //Allowed Values
+    },
+    quality: {
         type: String,
+        required: false,
+        trim: true,
+        lowercase: true,
+        enum: ['broken', 'worn', 'used', 'normal', 'new', 'mint', 'perfect'], //Allowed Values
     }
-}, 
-{
+  }, {
     versionKey: false,
-    collection: 'Items'
-});
+    collection: 'Items',
+  });
 
 module.exports = mongoose.model('ItemModel', ItemSchema);
