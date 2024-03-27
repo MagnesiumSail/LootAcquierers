@@ -16,17 +16,10 @@ const userSchema = new Schema({
       select: false,
       unique: true
     },
-    acquirers: {
-      type: [ObjectId],
-      required: true,
-      ref: 'Acquirers', // Example: Reference to another collection, adjust as necessary
-      select: false,
-    },
-    items: {
-      type: [ObjectId],
-      required: true,
-      ref: 'Items',
-      select: false,
+    inventory: {
+      type: Schema.Types.ObjectId,
+      ref: 'Inventory', // References the Inventory model
+      required: true
     },
     createdAt: {
       type: Date,

@@ -1,23 +1,25 @@
 const { v4: uuidv4 } = require('uuid');
+const account = require('../models/userModel');
 
 //request new key
+//NEEDS TESTING AND ACTUALLY WRITE TO DB
 const requestNewKey = async (req, res) => {
   try {
-    const response = await axios.post(
-      "https://sandbox-api.marqeta.com/v3/auth/login",
-      {
-        username: "user",
-        password: "password",
-      }
-    );
-    res.json(response.data);
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ message: "Server Error" });
+    if (!req.body.username)
+      return res.status(400).json({ message: "Username is required" });
+    const newUser = new account({
+      username: req.body.username,
+      key: uuidv4()
+    });
+  }
+  catch (err) {
+    console.log(err);
+    res.status(503).json({ message: "Error Adding Account. Database may be unavailable." });
   }
 };
 
 
 
 module.exports = {
+  requestNewKey
 };

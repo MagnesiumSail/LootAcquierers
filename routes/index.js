@@ -12,6 +12,8 @@ router.use('/items', require('./items'));
 router.use('/acquirers', require('./acquirers'));
 // Account Route
 router.use('/accounts', require('./accounts'));
+// Inventory Route
+router.use('/inventory', require('./inventory'));
 
 // error handling
 router.use((req, res, next) => {

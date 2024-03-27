@@ -1,5 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const AcquirersController = require('../controllers/AcquirerController');
+const inventoryController = require('../controllers/InventoryController');
+
+
 
 module.exports = router;

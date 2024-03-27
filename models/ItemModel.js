@@ -2,7 +2,9 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const itemSchema = new Schema({
+//static inventory model - no changing elements
+//just references the database dictionary.
+const ItemSchema = new Schema({
     name: {
       type: String,
       required: true,
@@ -15,13 +17,13 @@ const itemSchema = new Schema({
       default: '',
     },
     types: {
-      type: String,
+      type: [String],
       required: true,
       trim: true,
       lowercase: true
     },
     origins: {
-      type: String,
+      type: [String],
       required: true,
       trim: true,
       lowercase: true
@@ -33,6 +35,7 @@ const itemSchema = new Schema({
       lowercase: true,
       enum: ['common', 'uncommon', 'rare', 'legendary', 'exotic'], //Allowed Values
     },
+    /*
     quality: {
         type: String,
         required: false,
@@ -40,25 +43,10 @@ const itemSchema = new Schema({
         lowercase: true,
         enum: ['broken', 'worn', 'used', 'normal', 'new', 'mint', 'perfect'], //Allowed Values
     }
+    */
   }, {
     versionKey: false,
     collection: 'Items',
   });
 
 module.exports = mongoose.model('ItemModel', ItemSchema);
-
-// Get single Item
-//THIS NEEDS TESTING **UNTESTED**
-const getItem = async (req, res) => {
-  try {
-    const returnedItem = await ItemModel.findById(req.params.id);
-    if (!returnedItem) {
-      return res.status(404).json({ message: 'Item not found' });
-    }
-    res.json(returnedItem);
-  }
-  catch (err) {
-    console.error(err);
-    res.status(500).json({ message: 'Server Error' });
-  }
-}
