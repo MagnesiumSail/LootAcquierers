@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
+// TODO: Make quality a dynamic attribute, along with added date.
 const inventorySchema = new Schema(
   {
     userId: { type: Schema.Types.ObjectId, ref: "User", required: true },

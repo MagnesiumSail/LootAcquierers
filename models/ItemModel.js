@@ -35,6 +35,7 @@ const ItemSchema = new Schema({
       lowercase: true,
       enum: ['common', 'uncommon', 'rare', 'legendary', 'exotic'], //Allowed Values
     },
+    // TODO: Quality needs to be moved into inventory
     /*
     quality: {
         type: String,
